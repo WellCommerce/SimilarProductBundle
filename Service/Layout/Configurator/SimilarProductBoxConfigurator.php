@@ -39,7 +39,12 @@ final class SimilarProductBoxConfigurator extends AbstractLayoutBoxConfigurator
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => 'similar_product.tip.layout_box_configuration',
+            'tip' => 'layout_box.tip.similar_product',
         ]));
+
+        $fieldset->addChild($builder->getElement('text_field', [
+            'name'  => 'limit',
+            'label' => 'layout_box.label.similar_product.limit',
+        ]))->setValue($this->getValue($defaults, '[limit]', 4));
     }
 }
